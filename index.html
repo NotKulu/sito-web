@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Parole e Concetti nel digitale</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
-        #map { height: 600px; }
+        #map {
+            height: 600px;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
         }
-        header, footer {
+
+        header,
+        footer {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 10px 0;
         }
+
         nav {
             background-color: #333;
         }
+
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             overflow: hidden;
         }
+
         nav ul li {
             float: left;
         }
+
         nav li a {
             display: block;
             color: white;
@@ -39,130 +49,296 @@
             padding: 14px 16px;
             text-decoration: none;
         }
+
         nav li a:hover {
             background-color: #111;
         }
+
         .container {
             padding: 20px;
         }
+
         main {
             padding: 20px;
         }
+
         section {
             margin-bottom: 20px;
         }
+
         h2 {
             color: #333;
         }
+
         h3 {
             color: #333;
         }
+
         pre {
             background-color: #f4f4f4;
             padding: 10px;
             border-left: 3px solid #f4f4f4;
             overflow-x: auto;
         }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
         .monumento {
-        background: white;
-        padding: 15px;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Chiese e Monumenti di Brindisi</h1>
-</header>
+    <header>
+        <h1>Chiese e Monumenti di Brindisi e provincia</h1>
+    </header>
 
-<nav>
-    <ul>
-        <li><a href="#chiese">Chiese</a></li>
-        <li><a href="#monumenti">Monumenti</a></li>
-      <li><a href="#mappa">Mappa</a></li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="#chiese">Chiese</a></li>
+            <li><a href="#monumenti">Monumenti</a></li>
+            <li><a href="#mappa">Mappa</a></li>
+        </ul>
+    </nav>
 
-<main>
-    <section id="chiese">
-        <h2>Chiese di Brindisi</h2>
-        <div class="container">
-            <div class="monumento">
-                <h3>Cattedrale di Brindisi</h3>
-                <p>Il duomo di Brindisi, ufficialmente pontificia basilica cattedrale di Brindisi o duomo di Brindisi o basilica della Visitazione e San Giovanni Battista. <a href="https://it.wikipedia.org/wiki/Cattedrale_di_Brindisi">Wikipedia</a></p>
-            </div>
-            <div class="monumento">
-                <h3>Chiesa della Madonna del Giardino - Tuturano XIV secolo</h3>
-                <p>Questa chiesa storica si trova nella frazione di Tuturano ed è stata costruita nel XIV secolo. <a href="https://it.wikipedia.org/wiki/Utente:Marcguad07/Sandbox">Wikipedia</a></p>
-            </div>
+    <main>
+        <section id="chiese">
+            <h2>Chiese di Brindisi</h2>
+            <div class="container">
+                <a href="https://it.wikipedia.org/wiki/Cattedrale_di_Brindisi">
+                    <div class="monumento">
+                        <h3>Cattedrale di Brindisi</h3>
+                        <p>Il duomo di Brindisi, ufficialmente pontificia basilica cattedrale di Brindisi o duomo di
+                            Brindisi o basilica della Visitazione e San Giovanni Battista.</p>
+                    </div>
+                </a>
 
-            <div class="monumento">
-                <h3>Chiesa di S. Lucia SS Trinità</h3>
-                <p>Questa chiesa è dedicata a Santa Lucia e alla Santissima Trinità. <a href="https://it.wikipedia.org/wiki/Utente:Rgeusa07/Sandbox">Wikipedia</a></p>
-            </div>
-            <div class="monumento">
-                <h3>Chiesa del Cristo</h3>
-                <p>La Chiesa del Cristo è una delle più antiche e significative di Brindisi. <a href="https://it.wikipedia.org/wiki/Utente:Vncenz/Sandbox">Wikipedia</a></p>
-            </div>
-            <div class="monumento">
-                <h3>Chiesa della Pietà</h3>
-                <p>La Chiesa della Pietà è famosa per la sua architettura e le opere d'arte che conserva. <a href="https://it.wikipedia.org/wiki/Utente:Gu4nC14l33485/Sandbox">Wikipedia</a></p>
-            </div>
 
-            <div class="monumento">
-                <h3>Chiesa di Jaddico</h3>
-                <p>Una chiesa poco conosciuta ma di grande fascino, situata in una zona tranquilla della città. <a href="https://it.wikipedia.org/wiki/Utente:Lxree/Sandbox">Wikipedia</a></p>
-            </div>
-            <div class="monumento">
-                <h3>Chiesa di S. Maria degli Angeli</h2>
-                <p>La Chiesa di Santa Maria degli Angeli è conosciuta per la sua bellezza architettonica e spirituale. <a href="https://it.wikipedia.org/wiki/Utente:CiccioRiccio90/Sandbox">Wikipedia</a></p>
-            </div>
-        </div>
-    <section id="monumenti">
-        <h2>Monumenti</h2>
-        <div class="container">
-            <div class="monumento">
-                <h3>Il monumento ai Caduti</h3>
-                <p>Il Monumento ai caduti della prima guerra mondiale è un monumento di Brindisi sito in piazza Santa Teresa. Voluto dall'amministrazione comunale, fu scelto lo scultore brindisino Edgardo Simone che utilizzò marmo bianco di Carrara. <a href="https://it.wikipedia.org/wiki/Utente:NotKulu/Sandbox">Wikipedia</a></p>
-            </div>
-        </div>
-    </section>
 
-    <section id="mappa">
-        <h2>Mappa</h2>
-        <div id="map"></div>
-        <script>
-            var map = L.map('map').setView([40.64036, 17.94565], 20);
+                <a href="https://it.wikipedia.org/wiki/Utente:Marcguad07/Sandbox">
+                    <div class="monumento">
+                        <h3>Chiesa della Madonna del Giardino - Tuturano XIV secolo</h3>
+                        <p>Questa chiesa storica si trova nella frazione di Tuturano ed è stata costruita nel XIV
+                            secolo.</p>
+                    </div>
+                </a>
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            }).addTo(map);
+                <a href="https://it.wikipedia.org/wiki/Utente:Rgeusa07/Sandbox">
+                    <div class="monumento">
+                        <h3>Chiesa di S. Lucia SS Trinità</h3>
+                        <p>Questa chiesa è dedicata a Santa Lucia e alla Santissima Trinità. </p>
+                    </div>
+                </a>
 
-            L.marker([40.64036, 17.94565]).addTo(map)
-            .bindPopup('Cattedrale').openPopup();
-            L.marker([40.54433, 17.94423]).addTo(map)
-            .bindPopup('Chiesa della Madonna del Giardino').openPopup();
-            L.marker([40.63573, 17.94658]).addTo(map)
-            .bindPopup('Chiesa di L. Lucia SS Trinità').openPopup();
-            L.marker([40.633, 17.9466]).addTo(map)
-            .bindPopup('Chiesa del Cristo').openPopup();
-            L.marker([40.63329, 17.94202]).addTo(map)
-            .bindPopup('Chiesa della Pietà').openPopup();
-            L.marker([40.6674, 17.86777]).addTo(map)
-            .bindPopup('Chiesa di Jaddico').openPopup();
-            L.marker([40.63741, 17.94307]).addTo(map)
-            .bindPopup('Chiesa di S. Maria degli Angeli').openPopup();
-            L.marker([40.64084, 17.94323]).addTo(map)
-            .bindPopup('Monumento ai Caduti').openPopup();
-        </script>
-    </section>
-</main>
+                <a href="https://it.wikipedia.org/wiki/Utente:Vncenz/Sandbox">
+                    <div class="monumento">
+                        <h3>Chiesa del Cristo</h3>
+                        <p>La Chiesa del Cristo è una delle più antiche e significative di Brindisi.</p>
+                    </div>
+                </a>
 
-<footer>
-    <p>&copy; 2024 Sgiove - 3°DI</p>
-</footer>
+                <a href="https://it.wikipedia.org/wiki/Utente:Gu4nC14l33485/Sandbox">
+                    <div class="monumento">
+                        <h3>Chiesa della Pietà</h3>
+                        <p>La Chiesa della Pietà è famosa per la sua architettura e le opere d'arte che conserva.</p>
+                    </div>
+                </a>
+
+                <a href="https://it.wikipedia.org/wiki/Utente:Lxree/Sandbox">
+                    <div class="monumento">
+                        <h3>Chiesa di Jaddico</h3>
+                        <p>Una chiesa poco conosciuta ma di grande fascino, situata in una zona tranquilla della città.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="https://it.wikipedia.org/wiki/Utente:CiccioRiccio90/Sandbox">
+                    <div class="monumento">
+                        <h3>Chiesa di S. Maria degli Angeli</h2>
+                            <p>La Chiesa di Santa Maria degli Angeli è conosciuta per la sua bellezza architettonica e
+                                spirituale.</p>
+                    </div>
+                </a>
+
+                <a href="https://en.wikipedia.org/wiki/User:Sev3nB2/sandbox">
+                    <div class="monumento">
+                        <h3>Chiesa di San Giovanni al Sepolcro</h3>
+                        <p>La chiesa di San Giovanni al Sepolcro è una chiesa romanica sita nel centro storico di
+                            Brindisi, chiusa al culto, ma aperta al pubblico con visite guidate.</p>
+                    </div>
+                </a>
+
+                <a href="https://it.wikipedia.org/wiki/Utente:Ostunibestia/SandBox">
+                    <div class="monumento">
+                        <h3>Chiesa di Santa Maria del Casale</h3>
+                        <p>La chiesa di Santa Maria del Casale è una costruzione romanico-gotica sita 2 chilometri a
+                            nord di Brindisi, nei pressi del quartiere Casale, sulla strada per l'aeroporto.</p>
+                    </div>
+                </a>
+
+                <a href="https://it.wikipedia.org/wiki/Utente:Alessio-Molf/SandBox">
+                    <div class="monumento">
+                        <h3>Chiesa delle Scuole Pie</h3>
+                        <p>La chiesa di Santa Maria del Casale è una costruzione romanico-gotica sita 2 chilometri a
+                            nord di Brindisi, nei pressi del quartiere Casale, sulla strada per l'aeroporto.</p>
+                    </div>
+                </a>
+
+                <a href="https://it.wikipedia.org/wiki/Utente:Pippo791/SandBox">
+                    <div class="monumento">
+                        <h3>Chiesa di Cristo al Passo</h3>
+                        <p>La chiesetta deriva il suo nome probabilmente dal fatto che si trovava sull’itinerario che
+                            percorrevano i brindisini per recarsi in pellegrinaggio a S. Maria del Casale.</p>
+                    </div>
+                </a>
+
+                <a href="https://it.wikipedia.org/wiki/Utente:Coplisheale/SandBox">
+                    <div class="monumento">
+                        <h3>Chiesa di Santa Chiara</h3>
+                        <p>L’ex Convento di S.Chiara si articola su due piani disposti a forma a 'L', abbracciando al
+                            suo interno un ampio spazio verde di sosta con un ulivo secolare, agrumeti e pruni.</p>
+                    </div>
+                </a>
+
+                <a href="https://it.wikipedia.org/wiki/Utente:MatteoPontrex/SandBox">
+                    <div class="monumento">
+                        <h3>Chiesa di San Paolo Eremita</h3>
+                        <p>La chiesa di San Paolo eremita è una chiesa gotica eretta dai francescani a Brindisi.</p>
+                    </div>
+                </a>
+
+                <a href="https://it.wikipedia.org/wiki/Utente:nicolotrotto/SandBox">
+                    <div class="monumento">
+                        <h3>Chiesa di San Sebastiano</h3>
+                        <p>La chiesa di San Sebastiano è un luogo di culto cattolico di Francavilla Fontana, in
+                            provincia di Brindisi. Nello stesso complesso in cui fa parte la chiesa, si trova anche l'ex
+                            Real Collegio Ferdinandeo, una delle scuole più prestigiose presenti nell'Ottocento in
+                            Puglia.</p>
+                    </div>
+                </a>
+
+                <section id="monumenti">
+                    <h2>Monumenti</h2>
+                    <div class="container">
+                        <a href="https://it.wikipedia.org/wiki/Utente:NotKulu/Sandbox">
+                            <div class="monumento">
+                                <h3>Il monumento ai Caduti</h3>
+                                <p>Il Monumento ai caduti della prima guerra mondiale è un monumento di Brindisi sito in
+                                    piazza
+                                    Santa Teresa. Voluto dall'amministrazione comunale, fu scelto lo scultore brindisino
+                                    Edgardo
+                                    Simone che utilizzò marmo bianco di Carrara.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://it.wikipedia.org/wiki/Utente:Sasaaa33/Sandbox">
+                            <div class="monumento">
+                                <h3> Colonne Romane</h3>
+                                <p>Le Colonne romane di Brindisi sono un monumento situato presso il porto della città.
+                                </p>
+                            </div>
+                        </a>
+
+                        <a href="https://it.wikipedia.org/wiki/Utente:Annamaria Zanza/Sandbox">
+                            <div class="monumento">
+                                <h3>Museo Archeologico Francesco Ribezzo</h3>
+                                <p>Il Museo archeologico provinciale "Francesco Ribezzo" si trova a Brindisi, in piazza
+                                    Duomo.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://it.wikipedia.org/wiki/Utente:Dark fra08/Sandbox">
+                            <div class="monumento">
+                                <h3>Castello Angioino</h3>
+                                <p>Il Castello Alfonsino è una complessa opera fortificata costruita sull'isola di
+                                    Sant'Andrea, all'imboccatura del porto esterno di Brindisi.</p>
+                            </div>
+                        </a>
+
+                        <a href="https://it.wikipedia.org/wiki/Utente:proge.wiki/Sandbox">
+                            <div class="monumento">
+                                <h3>Seminario Arcivescovile</h3>
+                                <p>Il palazzo rappresenta il più alto esempio di Barocco nella città salentina e si
+                                    trova in piazza Duomo.</p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="mappa">
+                    <h2>Mappa</h2>
+                    <div id="map"></div>
+                    <script>
+                        var map = L.map('map').setView([40.64036, 17.94565], 13);
+
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                        }).addTo(map);
+
+                        // Chiese
+
+                        L.marker([40.64036, 17.94565]).addTo(map)
+                            .bindPopup('Cattedrale').openPopup();
+                        L.marker([40.54433, 17.94423]).addTo(map)
+                            .bindPopup('Chiesa della Madonna del Giardino').openPopup();
+                        L.marker([40.63573, 17.94658]).addTo(map)
+                            .bindPopup('Chiesa di L. Lucia SS Trinità').openPopup();
+                        L.marker([40.633, 17.9466]).addTo(map)
+                            .bindPopup('Chiesa del Cristo').openPopup();
+                        L.marker([40.63329, 17.94202]).addTo(map)
+                            .bindPopup('Chiesa della Pietà').openPopup();
+                        L.marker([40.6674, 17.86777]).addTo(map)
+                            .bindPopup('Chiesa di Jaddico').openPopup();
+                        L.marker([40.63741, 17.94307]).addTo(map)
+                            .bindPopup('Chiesa di S. Maria degli Angeli').openPopup();
+                        L.marker([40.63877, 17.94293]).addTo(map)
+                            .bindPopup('Chiesa di San Giovanni al Sepolcro').openPopup();
+                        L.marker([40.6544, 17.9352]).addTo(map)
+                            .bindPopup('Chiesa di Santa Maria del Casale').openPopup();
+                        L.marker([40.63877, 17.94293]).addTo(map)
+                            .bindPopup('Chiesa di San Giovanni al Sepolcro').openPopup();
+                        L.marker([40.6397560, 17.9436200]).addTo(map)
+                            .bindPopup('Chiesa di Delle Scuole Pie').openPopup();
+                        L.marker([40.63299, 17.94666]).addTo(map)
+                            .bindPopup('Chiesa di Cristo al Passo').openPopup();
+                        L.marker([40.64087, 17.94514]).addTo(map)
+                            .bindPopup('Chiesa di Santa Chiara').openPopup();
+                        L.marker([40.63981, 17.94248]).addTo(map)
+                            .bindPopup('Chiesa di San Paolo Eremita').openPopup();
+                        L.marker([40.5327, 17.58]).addTo(map)
+                            .bindPopup('Chiesa di San Sebastiano').openPopup();
+
+
+                        // Monumenti 
+
+                        L.marker([40.64084, 17.94323]).addTo(map)
+                            .bindPopup('Monumento ai Caduti').openPopup();
+                        L.marker([40.64109, 17.94676]).addTo(map)
+                            .bindPopup('Colonne Romane').openPopup();
+                        L.marker([40.64109, 17.94676]).addTo(map)
+                            .bindPopup('Colonne Romane').openPopup();
+                        L.marker([40.64065, 17.94547]).addTo(map)
+                            .bindPopup('Museo Archeologico Francesco Ribezzo').openPopup();
+                        L.marker([40.6554, 17.9676]).addTo(map)
+                            .bindPopup('Castello Angioino').openPopup();
+                        L.marker([40.64014, 17.9451]).addTo(map)
+                        .bindPopup('Seminario Arcivescovile').openPopup();
+                    </script>
+                </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sgiove - 3°DI</p>
+    </footer>
 
 </body>
+
 </html>
