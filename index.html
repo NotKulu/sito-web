@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map { height: 600px; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav {
+            background-color: #333;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        nav ul li {
+            float: left;
+        }
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav li a:hover {
+            background-color: #111;
+        }
+        .container {
+            padding: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 3px solid #f4f4f4;
+            overflow-x: auto;
+        }
+        .monumento {
+        background: white;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Chiese e Monumenti di Brindisi</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#chiese">Chiese</a></li>
+        <li><a href="#monumenti">Monumenti</a></li>
+      <li><a href="#mappa">Mappa</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section id="chiese">
+        <h2>Chiese di Brindisi</h2>
+        <div class="container">
+            <div class="monumento">
+                <h3>Cattedrale di Brindisi</h3>
+                <p>Il duomo di Brindisi, ufficialmente pontificia basilica cattedrale di Brindisi o duomo di Brindisi o basilica della Visitazione e San Giovanni Battista. <a href="https://it.wikipedia.org/wiki/Cattedrale_di_Brindisi">Wikipedia</a></p>
+            </div>
+            <div class="monumento">
+                <h3>Chiesa della Madonna del Giardino - Tuturano XIV secolo</h3>
+                <p>Questa chiesa storica si trova nella frazione di Tuturano ed è stata costruita nel XIV secolo. <a href="https://it.wikipedia.org/wiki/Utente:Marcguad07/Sandbox">Wikipedia</a></p>
+            </div>
+
+            <div class="monumento">
+                <h3>Chiesa di S. Lucia SS Trinità</h3>
+                <p>Questa chiesa è dedicata a Santa Lucia e alla Santissima Trinità. <a href="https://it.wikipedia.org/wiki/Utente:Rgeusa07/Sandbox">Wikipedia</a></p>
+            </div>
+            <div class="monumento">
+                <h3>Chiesa del Cristo</h3>
+                <p>La Chiesa del Cristo è una delle più antiche e significative di Brindisi. <a href="https://it.wikipedia.org/wiki/Utente:Vncenz/Sandbox">Wikipedia</a></p>
+            </div>
+            <div class="monumento">
+                <h3>Chiesa della Pietà</h3>
+                <p>La Chiesa della Pietà è famosa per la sua architettura e le opere d'arte che conserva. <a href="https://it.wikipedia.org/wiki/Utente:Gu4nC14l33485/Sandbox">Wikipedia</a></p>
+            </div>
+
+            <div class="monumento">
+                <h3>Chiesa di Jaddico</h3>
+                <p>Una chiesa poco conosciuta ma di grande fascino, situata in una zona tranquilla della città. <a href="https://it.wikipedia.org/wiki/Utente:Lxree/Sandbox">Wikipedia</a></p>
+            </div>
+            <div class="monumento">
+                <h3>Chiesa di S. Maria degli Angeli</h2>
+                <p>La Chiesa di Santa Maria degli Angeli è conosciuta per la sua bellezza architettonica e spirituale. <a href="https://it.wikipedia.org/wiki/Utente:CiccioRiccio90/Sandbox">Wikipedia</a></p>
+            </div>
+        </div>
+    <section id="monumenti">
+        <h2>Monumenti</h2>
+        <div class="container">
+            <div class="monumento">
+                <h3>Il monumento ai Caduti</h3>
+                <p>Il Monumento ai caduti della prima guerra mondiale è un monumento di Brindisi sito in piazza Santa Teresa. Voluto dall'amministrazione comunale, fu scelto lo scultore brindisino Edgardo Simone che utilizzò marmo bianco di Carrara. <a href="https://it.wikipedia.org/wiki/Utente:NotKulu/Sandbox">Wikipedia</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mappa">
+        <h2>Mappa</h2>
+        <div id="map"></div>
+        <script>
+            var map = L.map('map').setView([40.64036, 17.94565], 20);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+            L.marker([40.64036, 17.94565]).addTo(map)
+            .bindPopup('Cattedrale').openPopup();
+            L.marker([40.54433, 17.94423]).addTo(map)
+            .bindPopup('Chiesa della Madonna del Giardino').openPopup();
+            L.marker([40.63573, 17.94658]).addTo(map)
+            .bindPopup('Chiesa di L. Lucia SS Trinità').openPopup();
+            L.marker([40.633, 17.9466]).addTo(map)
+            .bindPopup('Chiesa del Cristo').openPopup();
+            L.marker([40.63329, 17.94202]).addTo(map)
+            .bindPopup('Chiesa della Pietà').openPopup();
+            L.marker([40.6674, 17.86777]).addTo(map)
+            .bindPopup('Chiesa di Jaddico').openPopup();
+            L.marker([40.63741, 17.94307]).addTo(map)
+            .bindPopup('Chiesa di S. Maria degli Angeli').openPopup();
+            L.marker([40.64084, 17.94323]).addTo(map)
+            .bindPopup('Monumento ai Caduti').openPopup();
+        </script>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Sgiove - 3°DI</p>
+</footer>
+
+</body>
+</html>
